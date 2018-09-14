@@ -71,7 +71,7 @@ class HomeScreenState extends State<HomeScreen> {
                 RaisedButton(
                   padding: EdgeInsets.symmetric(horizontal: 100.0),
                   child: new Text("Proceed"),
-                  color: Colors.greenAccent,
+                  color: Colors.amber,
                   shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0),
                   ),
                   onPressed: (){
