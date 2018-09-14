@@ -75,6 +75,7 @@ class HomeScreenState extends State<HomeScreen> {
                   shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0),
                   ),
                   onPressed: (){
+                    Navigator.of(context).pushNamed('list');
                     print(nameController.text);
                   },
 
