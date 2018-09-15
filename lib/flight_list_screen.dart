@@ -16,7 +16,10 @@ class FlightListScreen extends StatelessWidget{
             itemCount: 15,
             itemBuilder: (context, index) => Padding(
               padding: const EdgeInsets.all(8.0),
-              child: FlightDetailsCard(),
+              child: FlightDetailsCard(
+                passengerName: userFullName,
+                isClickable: true,
+              ),
             )),
       )
     );

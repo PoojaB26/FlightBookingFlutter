@@ -68,7 +68,9 @@ class FlightDetailScreen extends StatelessWidget{
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    FlightDetailsCard(),
+                    FlightDetailsCard(
+                      isClickable: false,
+                    ),
                     _passengerDetailsCard,
                   ],
                 ),
