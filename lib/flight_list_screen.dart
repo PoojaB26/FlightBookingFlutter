@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'flights_details_screen.dart';
 import 'flight_details_card.dart';
 
 class FlightListScreen extends StatelessWidget{
