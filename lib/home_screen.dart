@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'flight_list_screen.dart';
+
 
 class HomeScreen extends StatefulWidget{
   @override
@@ -42,7 +44,7 @@ class HomeScreenState extends State<HomeScreen> {
 
                 ),
                 SizedBox(height: 20.0,),
-                Text("MakeMyFlights",
+                Text("BookMyFlights",
                   style: TextStyle(
                       color: Colors.black87,
                       fontSize: 20.0,
@@ -75,7 +77,7 @@ class HomeScreenState extends State<HomeScreen> {
                   shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0),
                   ),
                   onPressed: (){
-                    Navigator.of(context).pushNamed('list');
+                    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => FlightListScreen(userFullName : nameController.text)));
                     print(nameController.text);
                   },
 

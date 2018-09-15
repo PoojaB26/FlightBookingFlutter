@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class FlightDetailScreen extends StatelessWidget{
+  final String passengerName;
+
+  FlightDetailScreen({this.passengerName});
+
   @override
   Widget build(BuildContext context) {
 
@@ -51,7 +55,7 @@ class FlightDetailScreen extends StatelessWidget{
       
         children: <Widget>[
           SizedBox(height: 48.0,),
-          getRichText("Passenger", "John Doe"),
+          getRichText("Passenger", passengerName),
           SizedBox(height: 16.0,),
           getRichText("Date", "24-04-2018"),
           SizedBox(height: 16.0,),
