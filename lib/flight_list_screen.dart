@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'flights_details_screen.dart';
+import 'flight_details_card.dart';
 
 class FlightListScreen extends StatelessWidget{
 
@@ -10,11 +11,15 @@ class FlightListScreen extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Welcome $userFullName"),),
-      body: RaisedButton(onPressed: (){
-        Navigator.of(context).push(
-            MaterialPageRoute(
-                builder: (BuildContext context) => FlightDetailScreen(passengerName: userFullName,)));
-      }),
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: ListView.builder(
+            itemCount: 15,
+            itemBuilder: (context, index) => Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: FlightDetailsCard(),
+            )),
+      )
     );
   }
 
