@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
-import 'flight_details_card.dart';
+import 'flight_card.dart';
+import 'flight_dummy.dart';
+import 'flight_model.dart';
+
 
 class FlightListScreen extends StatelessWidget{
+
+  Flight flight;
 
   final String userFullName;
   FlightListScreen({this.userFullName});
@@ -13,14 +18,19 @@ class FlightListScreen extends StatelessWidget{
         body: Padding(
           padding: const EdgeInsets.all(15.0),
           child: ListView.builder(
-              itemCount: 15,
-              itemBuilder: (context, index) => Padding(
+
+              itemCount: 5,
+              itemBuilder: (context, index) {
+                flight = FlightsMockData.getFlights(index);
+                return Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: FlightDetailsCard(
+                child: FlightCard(
                   passengerName: userFullName,
                   isClickable: true,
+                  flight: flight,
                 ),
-              )),
+              );
+              }),
         )
     );
   }

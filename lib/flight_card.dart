@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'flights_details_screen.dart';
+import 'flight_model.dart';
 
 
-class FlightDetailsCard extends StatelessWidget{
+class FlightCard extends StatelessWidget{
   final String passengerName;
   final bool isClickable;
+  final Flight flight;
 
-  FlightDetailsCard({
+  FlightCard({
     this.passengerName,
-    this.isClickable
+    this.isClickable,
+    this.flight,
   });
 
 
@@ -36,7 +39,9 @@ class FlightDetailsCard extends StatelessWidget{
         Navigator.of(context).push(
             MaterialPageRoute(
                 builder: (BuildContext context)
-                => FlightDetailScreen(passengerName: passengerName,)))
+                => FlightDetailScreen(
+                    passengerName: passengerName,
+                flight: flight)))
             :null;
       },
       child: Card(
@@ -49,9 +54,9 @@ class FlightDetailsCard extends StatelessWidget{
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              _cityStyle("NYC", "New York City", "5:50 AM"),
+              _cityStyle(flight.from, flight.fromCity, flight.departTime),
               Icon(Icons.airplanemode_active),
-              _cityStyle("SFO", "San Francisco", "8:50 AM"),
+              _cityStyle(flight.to, flight.toCity, flight.arriveTime),
             ],
           ),
         ),

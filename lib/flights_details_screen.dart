@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'flight_details_card.dart';
+import 'flight_card.dart';
+import 'flight_model.dart';
+
+
 class FlightDetailScreen extends StatelessWidget{
   final String passengerName;
+  final Flight flight;
 
-  FlightDetailScreen({this.passengerName});
+  FlightDetailScreen({this.passengerName, this.flight});
 
   @override
   Widget build(BuildContext context) {
@@ -68,8 +72,9 @@ class FlightDetailScreen extends StatelessWidget{
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    FlightDetailsCard(
+                    FlightCard(
                       isClickable: false,
+                      flight: flight,
                     ),
                     _passengerDetailsCard,
                   ],
