@@ -20,33 +20,33 @@ class FlightDetailScreen extends StatelessWidget{
       );
     }
     final _passengerDetailsCard = Column(
-      
-        children: <Widget>[
-          SizedBox(height: 48.0,),
-          getRichText("Passenger", passengerName),
-          SizedBox(height: 16.0,),
-          getRichText("Date", "24-04-2018"),
-          SizedBox(height: 16.0,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              getRichText("Flight", "INDIGO240"),
-              SizedBox(width: 16.0,),
-              getRichText("Class", "Business"),
-            ],
-          ),
-          SizedBox(height: 16.0,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              getRichText("Seat", "21B"),
-              SizedBox(width: 16.0,),
-              getRichText("Gate", "17A")
-            ],
-          ),
-          SizedBox(height: 48.0,),
 
-        ],
+      children: <Widget>[
+        SizedBox(height: 48.0,),
+        getRichText("Passenger", passengerName),
+        SizedBox(height: 16.0,),
+        getRichText("Date", "24-04-2018"),
+        SizedBox(height: 16.0,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            getRichText("Flight", "INDIGO240"),
+            SizedBox(width: 16.0,),
+            getRichText("Class", "Business"),
+          ],
+        ),
+        SizedBox(height: 16.0,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            getRichText("Seat", "21B"),
+            SizedBox(width: 16.0,),
+            getRichText("Gate", "17A")
+          ],
+        ),
+        SizedBox(height: 48.0,),
+
+      ],
     );
 
     return Scaffold(
@@ -68,7 +68,9 @@ class FlightDetailScreen extends StatelessWidget{
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    FlightDetailsCard(),
+                    FlightDetailsCard(
+                      isClickable: false,
+                    ),
                     _passengerDetailsCard,
                   ],
                 ),
