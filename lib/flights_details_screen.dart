@@ -52,7 +52,7 @@ class FlightDetailScreen extends StatelessWidget{
       );
     }
     final _passengerDetailsCard = Column(
-      
+
         children: <Widget>[
           SizedBox(height: 48.0,),
           getRichText("Passenger", passengerName),
