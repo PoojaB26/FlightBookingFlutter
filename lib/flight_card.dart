@@ -7,7 +7,7 @@ class FlightCard extends StatelessWidget{
   final String fullName;
   final bool isClickable;
 
-  FlightCard({this.flight, this.fullName, this.isClickable});
+  FlightCard({this.flight, this.fullName, @required this.isClickable});
 
   _cityStyle(code, cityName, time){
     return Expanded(

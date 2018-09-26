@@ -77,7 +77,7 @@ class HomeScreenState extends State<HomeScreen> {
                   shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0),
                   ),
                   onPressed: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => FlightListScreen(fullName : nameController.text)));
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context) => FlightListScreen(fullName : nameController.text)));
                     print(nameController.text);
                   },
 
