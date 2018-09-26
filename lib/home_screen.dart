@@ -14,8 +14,6 @@ class HomeScreenState extends State<HomeScreen> {
 
   final nameController = TextEditingController();
 
-
-
   @override
   void dispose() {
     nameController.dispose();
@@ -37,6 +35,7 @@ class HomeScreenState extends State<HomeScreen> {
           children: <Widget>[
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
               children: <Widget>[
                 Image(
                   image: AssetImage('assets/logo.png'),
@@ -80,7 +79,6 @@ class HomeScreenState extends State<HomeScreen> {
                     Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => FlightListScreen(userFullName : nameController.text)));
                     print(nameController.text);
                   },
-
                 ),
 
               ],

@@ -51,8 +51,9 @@ class FlightDetailScreen extends StatelessWidget{
         ),
       );
     }
-    final _passengerDetailsCard = Column(
-
+    final _passengerDetailsCard = Card(
+      elevation: 5.0,
+      child: Column(
         children: <Widget>[
           SizedBox(height: 48.0,),
           getRichText("Passenger", passengerName),
@@ -79,37 +80,44 @@ class FlightDetailScreen extends StatelessWidget{
           SizedBox(height: 48.0,),
 
         ],
+      ),
     );
 
     return Scaffold(
-      backgroundColor: Colors.amber,
-      appBar: AppBar(
-        elevation: 0.0,
-      ),
-      body: Stack(
-        children: <Widget>[
-          Positioned(
-            top: 60.0,
-            left: 10.0,
-            right: 10.0,
-            child: Container(
-              child: Card(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
-                color: Colors.white,
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    _flightDetailsCard,
-                    _passengerDetailsCard,
-                  ],
+        appBar: AppBar(
+          elevation: 0.0,
+        ),
+        body: SingleChildScrollView(
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            //color: Colors.black,
+            child: Stack(
+              alignment: Alignment.topCenter,
+              children: <Widget>[
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height*0.30,
+                  color: Colors.amber,
                 ),
-              ),
+                Positioned(
+                  top: MediaQuery.of(context).size.width*0.30,
+                  child: Container(
+                    width: MediaQuery.of(context).size.width*0.90,
+                    //color: Colors.white,
+                    child: Column(
+                      children: <Widget>[
+                        _flightDetailsCard,
+                        SizedBox(height: 20.0,),
+                        _passengerDetailsCard,
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
-          )
-        ],
-      ),
+          ),
+        )
     );
   }
-
 }
