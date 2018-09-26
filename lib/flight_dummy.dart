@@ -1,8 +1,8 @@
-import 'flight_model.dart';
+import 'package:flights_app/flight_model.dart';
 
 class FlightsMockData {
 
-  static var articleCount = 5;
+  static var count = 5;
 
   static var from = ["BBI", "CCU", "HYD", "BOM", "JAI"];
   static var to = ["BLR", "JAI", "BBI", "CCU", "AMD"];
@@ -12,7 +12,8 @@ class FlightsMockData {
   static var arriveTime = ["8:40 AM", "7:25 PM", "4:00 PM", "8:21 AM", "3:25 PM"];
 
   static getFlights(int position) {
-    return Flight(from[position],
+    return Flight(
+        from[position],
         to[position],
         fromCity[position],
         toCity[position],

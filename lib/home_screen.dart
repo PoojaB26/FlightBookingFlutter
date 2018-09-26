@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'flight_list_screen.dart';
+import 'package:flights_app/flight_list_screen.dart';
 
 
 class HomeScreen extends StatefulWidget{
@@ -77,7 +77,7 @@ class HomeScreenState extends State<HomeScreen> {
                   shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0),
                   ),
                   onPressed: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => FlightListScreen(userFullName : nameController.text)));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => FlightListScreen(fullName : nameController.text)));
                     print(nameController.text);
                   },
 

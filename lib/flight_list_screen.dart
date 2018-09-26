@@ -1,38 +1,41 @@
 import 'package:flutter/material.dart';
-import 'flight_card.dart';
-import 'flight_dummy.dart';
-import 'flight_model.dart';
-
+import 'package:flights_app/flights_details_screen.dart';
+import 'package:flights_app/flight_card.dart';
+import 'package:flights_app/flight_model.dart';
+import 'package:flights_app/flight_dummy.dart';
 
 class FlightListScreen extends StatelessWidget{
 
-  Flight flight;
 
-  final String userFullName;
-  FlightListScreen({this.userFullName});
+  final String fullName;
+  FlightListScreen({this.fullName});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(title: Text("Welcome $userFullName"),),
-        body: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: ListView.builder(
 
-              itemCount: 5,
-              itemBuilder: (context, index) {
-                flight = FlightsMockData.getFlights(index);
-                return Padding(
+    Flight flight;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(fullName),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView.builder(
+            itemCount: FlightsMockData.count,
+            itemBuilder: (context, index) {
+              flight = FlightsMockData.getFlights(index);
+              return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: FlightCard(
-                  passengerName: userFullName,
-                  isClickable: true,
+                  fullName: fullName,
                   flight: flight,
+                  isClickable: true,
                 ),
               );
-              }),
-        )
+            }
+        ),
+      ),
     );
   }
-
 }
